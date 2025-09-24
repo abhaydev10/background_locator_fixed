@@ -49,19 +49,6 @@
 group 'yukams.app.background_locator_2'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    ext.kotlin_version = '1.9.24'  // Updated Kotlin version
-    repositories {
-        google()
-        mavenCentral()  // Replace jcenter() which is deprecated
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:8.3.2'  // Updated to AGP 8.3.2
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
 rootProject.allprojects {
     repositories {
         google()
