@@ -45,9 +45,10 @@
 //     implementation 'com.google.code.gson:gson:2.8.6'
 //     implementation 'com.google.android.material:material:1.0.0'
 // }
-
 group 'yukams.app.background_locator_2'
 version '1.0-SNAPSHOT'
+
+// Remove the buildscript block entirely - let main project handle versions
 
 rootProject.allprojects {
     repositories {
@@ -94,7 +95,8 @@ android {
 }
 
 dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"  // Updated to jdk8
+    // Use specific versions instead of kotlin_version variable
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24"  // Fixed version
     implementation "com.google.android.gms:play-services-location:21.2.0"  // Updated version
     implementation 'com.google.code.gson:gson:2.10.1'  // Updated version
     implementation 'com.google.android.material:material:1.12.0'  // Updated version
