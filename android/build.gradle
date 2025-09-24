@@ -48,12 +48,12 @@
 group 'yukams.app.background_locator_2'
 version '1.0-SNAPSHOT'
 
-// Remove the buildscript block entirely - let main project handle versions
+// No buildscript block needed - main project handles versions
 
 rootProject.allprojects {
     repositories {
         google()
-        mavenCentral()  // Replace jcenter() which is deprecated
+        mavenCentral()
     }
 }
 
@@ -61,19 +61,18 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    namespace 'yukams.app.background_locator_2'  // Add namespace for AGP 8+
-    compileSdk 35  // Updated to SDK 35
+    namespace 'yukams.app.background_locator_2'
+    compileSdk 35
     
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17  // Required for AGP 8+
+        sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
     
     kotlinOptions {
-        jvmTarget = '17'  // Updated for AGP 8+ compatibility
+        jvmTarget = '17'
     }
     
-    // Enable buildConfig for AGP 8+
     buildFeatures {
         buildConfig = true
     }
@@ -89,15 +88,15 @@ android {
     
     lintOptions {
         disable 'InvalidPackage'
-        checkReleaseBuilds false  // Prevent lint errors from failing build
+        checkReleaseBuilds false
         abortOnError false
     }
 }
 
 dependencies {
-    // Use specific versions instead of kotlin_version variable
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24"  // Fixed version
-    implementation "com.google.android.gms:play-services-location:21.2.0"  // Updated version
-    implementation 'com.google.code.gson:gson:2.10.1'  // Updated version
-    implementation 'com.google.android.material:material:1.12.0'  // Updated version
+    // Replace $kotlin_version with hardcoded versions
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.24"
+    implementation "com.google.android.gms:play-services-location:21.2.0"
+    implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.google.android.material:material:1.12.0'
 }
